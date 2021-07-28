@@ -1,0 +1,263 @@
+.s-hero {
+    background-color: $primary-color;
+    padding-top: 3.9rem;
+
+    .container {
+        @include flex(row, flex-start, space-between)
+    }
+
+    .text {
+        color: $white;
+        width: 100%;
+        max-width: 55rem;
+    
+        h1 {
+            font-family: $title-font;
+            font-weight: bold;
+            font-size: 4.8rem;
+            line-height: 120%;
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 150%;
+            margin-bottom: 3.2rem;
+            max-width: 48.8rem
+        }
+
+        button {
+            @include style-btn(5.4rem, $secondary-color, #482C7D);
+            margin-bottom: 8.6rem
+        }
+
+        .know-all {
+            a {
+            display: flex;
+            align-items: center;
+            color: $white;
+            }
+        }
+
+            .icon {
+                height: 4.2rem;
+                width: 4.2rem;
+                background-color: rgba(124, 90, 186, 0.4);
+                border-radius: 6px;
+                margin-right: 1.6rem;
+                @include flex(row, center, center);
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 1.6rem;
+            }
+    }
+
+    .image {
+        position: relative;
+        top: 3.7rem
+    }
+
+    @include responsive(991px) {
+        .container {
+            flex-direction: column;
+        }
+
+        .text {
+            max-width: 100%;
+            text-align: center;
+
+            p {
+                max-width: 80%;
+                margin: 0 auto;
+                margin-bottom: 3rem;
+            }
+
+            button {
+                margin-bottom: 5rem;
+            }
+
+            .know-all a{
+                justify-content: center;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .image {
+            margin-left: 1.9rem;
+        }
+    }
+
+    @include responsive(480px) {
+
+        padding-top: 2.5rem ;
+
+        .text {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        .image {
+            img {
+                margin-left: -3rem;
+            }
+        }
+    }
+}
+
+.s-resources {
+    padding-top: 14.9rem;
+    padding-bottom: 9.9rem;
+
+    .top {
+        @include flex (row, center, space-between);
+        margin-bottom: 5.3rem;
+
+        h2 {
+            font-family: $title-font;
+            font-weight: bold;
+            font-size: 3.2rem;
+            line-height: 130%;
+            color: $title-color;
+            max-width: 50.2rem;
+        }
+
+        p {
+            color: $text-color;
+            font-size: 1.6rem;
+            line-height: 150%;
+        }
+    }
+
+    .content {
+        @include flex(row, flex-start, space-between);
+
+        .icon {
+            width: 6.4rem;
+            height: 6.4rem;
+            background-color: rgba(197, 190, 220, 0.1);
+            border-radius: 1.2rem;
+            @include flex(row, center, center);
+            margin-bottom: 3rem;
+        }
+
+        .info {
+            width: 100%;
+            max-width: 24rem;
+            h4 {
+                font-weight: 800;
+                font-size: 1.8rem;
+                color: $primary-color;
+                margin-bottom: 2rem;
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 165%;
+                color: $text-color;
+            }
+        }
+
+        .card-featured {
+            background-color: rgba(197, 190, 220, 0.1);
+            border-radius: 12px;
+            width: 28rem;
+            height: 32.3rem;
+            padding-top: 4.1rem;
+            padding-left: 4.2rem;
+
+            .info {
+                max-width: 20.4rem;
+            }
+
+            .icon {
+                background-color: $white;
+            }
+        }
+
+        ul {
+            width: 100%;
+            max-width: 90.4rem;
+            @include flex(row, flex-start, space-between);
+            margin-top: 4.1rem;
+            border-bottom: 3px solid rgba(197, 190, 220, 0.1);
+            padding-bottom: 6.5rem;
+            padding-left: 2rem;
+        }
+    }
+    @include responsive(991px) {
+        padding-top: 12rem;
+        .content {
+            flex-direction: column;
+
+            .card-featured {
+                width: 100%;
+                @include flex(column, center, center);
+                padding: 0;
+
+                .info {
+                    max-width: 100%;
+
+                    h4, p {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(768px) {
+        padding-top: 8rem;
+        padding-bottom: 5rem;
+
+        .top {
+            flex-direction: column;
+            text-align: center;
+
+            h2 {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .content {
+            ul {
+                li {
+                    &:not(:last-child) {
+                        margin-right: 2rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(480px) {
+        .content {
+            .card-featured {
+                p {
+                    max-width: 90%;
+                    margin: 0 auto;
+                }
+            }
+            .info {
+                max-width: 90%;
+                
+            }
+
+            ul {
+                flex-direction: column;
+                padding-left: 0;
+
+                li {
+                    @include flex(column, center, center);
+                    text-align: center;
+                    margin-bottom: 3rem;
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
